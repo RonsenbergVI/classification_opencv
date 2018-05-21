@@ -1,11 +1,5 @@
 # Notebook backup
-*.ipynb_checkpoints
+ipynb_checkpoints/
 
-# icloud stuff
-*.icloud
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+*.results.ipynb.icloud
