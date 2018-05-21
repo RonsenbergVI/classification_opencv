@@ -1,9 +1,24 @@
+// MIT License
 //
-//  main.cpp
+// Copyright (c) 2018 Rene Jean Corneille
 //
-//  Created by Corneille Rene-Jean on 17/08/2017.
-//  Copyright © 2017 Corneille Rene-Jean. All rights reserved.
-//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 
 #include <unistd.h>
 #include <iostream>
@@ -21,18 +36,17 @@
 #include <opencv2/dnn.hpp>
 #include <opencv2/plot.hpp>
 
-/** trains a collection of data on a collection of models
+
+/** trains a collection of data on a collection of models **
 
 @param data: the dictionary of data with keys the type of data and items the opencv container where data is stored
 
 @param model: machine learning models stores within a dictionary with keys the algorithm name and items are the instances of the
 machine learning
 
-In current implementation the function tries to avoid physical data copying and returns the
-matrix stored inside TrainData (unless the transposition or compression is needed).
- */
+ **/
 
-double train_test(std::pair<std::string,std::map<std::string, cv::Mat> > data, std::pair<std::string,cv::Ptr<cv::ml::StatModel> > model){
+double train_test(const std::pair<std::string,std::map<std::string, cv::Mat> >& data, std::pair<std::string,cv::Ptr<cv::ml::StatModel> > model){
 
     cv::Ptr<cv::ml::TrainData> trainData = cv::ml::TrainData::create(data.second.at("features"), 0, data.second.at("labels"));
 
@@ -67,13 +81,18 @@ double train_test(std::pair<std::string,std::map<std::string, cv::Mat> > data, s
         output << feature_row.at<float>(i,0) << "," << feature_row.at<float>(i,1)  << "," <<  y_predict.getMatRef().at<float>(i,0) << "\n";
     }
 
-    //std::cout << model.first << " -- " << data.first << " -- error: " << error << std::endl;
-
     return error;
 }
 
-/*
- */
+/** trains a collection of data on a collection of models **
+
+@param data: the dictionary of data with keys the type of data and items the opencv container where data is stored
+
+@param model: machine learning models stores within a dictionary with keys the algorithm name and items are the instances of the
+machine learning
+
+ **/
+
 std::map<std::string, cv::Mat> readTextFile(std::string path){
 
     std::map<std::string, cv::Mat> result;
