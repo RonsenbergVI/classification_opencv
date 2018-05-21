@@ -1,5 +1,6 @@
 # Notebook backup
-ipynb_checkpoints/
-
+.ipynb_checkpoints/
 
 *.results.ipynb.icloud
+
+*.out
