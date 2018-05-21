@@ -2,9 +2,22 @@
 
 ** Source code for the following blog post. **
 
-To run the code, only need to run the shell file run.sh.
+Instruction to run the code (MacOS only)
+
+#### 1. clone repository
+
+```markdown
+
+cd clone https://github.com/RonsenbergVI/classification_opencv.git
 
 
-1. clone repostory
+```
 
-cd 
+#### 2. run the shell
+
+```markdown
+
+sh run run.sh
+
+
+```
