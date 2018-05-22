@@ -8,7 +8,7 @@ Instruction to run the code (MacOS only)
 
 ```markdown
 
-cd clone https://github.com/RonsenbergVI/classification_opencv.git
+git clone https://github.com/RonsenbergVI/classification_opencv.git
 
 ```
 
