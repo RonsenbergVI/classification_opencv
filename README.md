@@ -16,6 +16,6 @@ git clone https://github.com/RonsenbergVI/classification_opencv.git
 
 ```markdown
 
-sh run run.sh
+sh run.sh
 
 ```
