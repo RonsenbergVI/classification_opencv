@@ -20,22 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include <unistd.h>
-#include <iostream>
-#include <map>
-#include <array>
-#include <unordered_map>
-#include <memory>
-#include <math.h>
-#include <fstream>
-#include <sstream>
-#include <opencv2/imgproc.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/core.hpp>
-#include <opencv2/ml.hpp>
-#include <opencv2/dnn.hpp>
-#include <opencv2/plot.hpp>
-
+#include "main.hh"
 
 /** trains a collection of data on a collection of models **
 
